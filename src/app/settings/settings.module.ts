@@ -1,0 +1,28 @@
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+
+import { IonicModule } from '@ionic/angular';
+
+import { SettingsPageRoutingModule } from './settings-routing.module';
+
+import { SettingsPage } from './settings.page';
+
+function deleteAccount() {
+  this.http.delete('http://colorsim.test/delete-user/jaapvandeboom@fakemail.com/', 1).subscribe();
+  this.router.navigate(['/start']);
+}
+
+
+@NgModule({
+  imports: [
+    CommonModule,
+    FormsModule,
+    IonicModule,
+    SettingsPageRoutingModule
+  ],
+  declarations: [SettingsPage]
+})
+
+
+export class SettingsPageModule {}
